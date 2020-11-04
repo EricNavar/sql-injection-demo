@@ -60,4 +60,5 @@ def index():
 def home():
     return'<h1>Heroku Deploy</h1>'
 
-app.run(debug=True)
+if __name__ == '__main__':
+    flaskapp.run(debug=True)
