@@ -57,6 +57,7 @@ def index():
         return render_template("index.html", user=session['activeUser'])
 
 @app.route('/home')
+def home():
     return'<h1>Heroku Deploy</h1>'
 
 app.run(debug=True)
