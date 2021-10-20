@@ -32,7 +32,9 @@ def login():
         db = get_db()
         cur = db.cursor()
 
-        sql = "SELECT * FROM user where username='{}' and password='{}'".format(request.form['username'], request.form['password'])
+        username = request.form['username']
+        password = request.form['password']
+        sql = "SELECT * FROM user where username='{}' and password='{}'".format(username, password)
         print("SQL query processed: {}".format(sql))
         result = cur.execute(sql).fetchone()
 
@@ -61,4 +63,4 @@ def home():
     return'<h1>Heroku Deploy</h1>'
 
 if __name__ == '__main__':
-    flaskapp.run(debug=True)
+    app.run(debug=True)
